@@ -59,6 +59,10 @@ namespace EyjaTrinket.ProjectileTAS
 
             InitNetFields();
         }
+        public WaterEyjaProjectile() : base()
+        {
+            InitNetFields();
+        }
 
         protected override void InitNetFields()
         {

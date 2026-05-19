@@ -98,7 +98,10 @@ namespace EyjaTrinket.ProjectileTAS
 
             //NetFields.AddField(, "");
         }
-
+        public CustomHealingProjectile() : base()
+        {
+            InitNetFields();
+        }
         public override bool update(GameTime time, GameLocation location)
         {
             // 如果视觉上已完成，只更新消失动画

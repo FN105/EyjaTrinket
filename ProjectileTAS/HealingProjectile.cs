@@ -21,29 +21,8 @@ namespace EyjaTrinket.ProjectileTAS
         private readonly NetFloat maxTrackSpeed = new NetFloat(8f);
 
         // 添加无参数构造函数
-        public HealingProjectile()
-            : base(
-                damageToFarmer: 0,
-                spriteIndex: 0,
-                bouncesTillDestruct: 0,
-                tailLength: 0,
-                rotationVelocity: 0f,
-                xVelocity: 0f,
-                yVelocity: 0f,
-                startingPosition: Vector2.Zero,
-                collisionSound: null,
-                bounceSound: null,
-                firingSound: null,
-                explode: false,
-                damagesMonsters: false,
-                location: null,
-                firer: null,
-                collisionBehavior: null)
+        public HealingProjectile() : base()
         {
-            // 设置默认值
-            healAmount.Value = 0;
-            trackStrength.Value = 0.1f;
-            maxTrackSpeed.Value = 8f;
             InitNetFields();
         }
 

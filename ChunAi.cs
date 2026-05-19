@@ -236,6 +236,7 @@ public class ChunAi : Companion
 
         if (Game1.shouldTimePass())
         {
+
             bool isCtrlPressed111111 = Game1.input.GetKeyboardState().IsKeyDown(Keys.LeftControl) && Game1.input.GetKeyboardState().IsKeyDown(Keys.LeftShift) && Game1.input.GetKeyboardState().IsKeyDown(Keys.LeftAlt) && Game1.input.GetKeyboardState().IsKeyDown(Keys.V);
             if (isCtrlPressed111111)
             {

@@ -457,6 +457,19 @@ public class WaterEyjaCompanion : Companion
         {
             //Game1.addHUDMessage(new HUDMessage("日常特效"));
             particleManager.AddCasualParticles(location, Position);
+            if (this.Owner?.IsLocalPlayer ?? false)
+            {
+                ModEntry.StaticHelper.Multiplayer.SendMessage(
+                    message: new ModEntry.WaterHitEffectMessage
+                    {
+                        EffectType = "AddCasualParticles",
+                        X = Position.X,
+                        Y = Position.Y,
+                        LocationName = location.Name
+                    },
+                    messageType: "EyjaTrinket/PlayWaterHitEffect"
+                );
+            }
             _dailyParticleTimer = 0f;
         }
         if (Owner != null && Owner.IsLocalPlayer)
@@ -640,7 +653,7 @@ public class WaterEyjaCompanion : Companion
                 {
                     _wasCtrlLPressed = false;
                 }
-                if (Game1.IsMasterGame)
+                //if (Game1.IsMasterGame)
                 {
                     List<Monster> targets;
 
@@ -832,6 +845,19 @@ public class WaterEyjaCompanion : Companion
                 Vector2 ls = new Vector2(65, 160);
                 lsPosition = base.Position + _customOffset + ls;
                 particleManager.AddVolcanoParticles(location, lsPosition);
+                if (this.Owner?.IsLocalPlayer ?? false)
+                {
+                    ModEntry.StaticHelper.Multiplayer.SendMessage(
+                        message: new ModEntry.WaterHitEffectMessage
+                        {
+                            EffectType = "AddVolcanoParticles",
+                            X = lsPosition.X,
+                            Y = lsPosition.Y,
+                            LocationName = location.Name
+                        },
+                        messageType: "EyjaTrinket/PlayWaterHitEffect"
+                    );
+                }
                 elapsedMilliseconds2 -= 5;
             }
             if (_multiAttackTimer <= 1000)
@@ -1485,18 +1511,57 @@ public class WaterEyjaCompanion : Companion
     {
         Vector2 explosionCenter = new Vector2(x, y);
         particleManager.CreateExplosion(location, explosionCenter);
+        if (this.Owner?.IsLocalPlayer ?? false)
+        {
+            ModEntry.StaticHelper.Multiplayer.SendMessage(
+                message: new ModEntry.WaterHitEffectMessage
+                {
+                    EffectType = "CreateExplosion",
+                    X = explosionCenter.X,
+                    Y = explosionCenter.Y,
+                    LocationName = location.Name
+                },
+                messageType: "EyjaTrinket/PlayWaterHitEffect"
+            );
+        }
 
     }
     private void OnVFireballCollision(GameLocation location, int x, int y, Character who)
     {
         Vector2 explosionCenter = new Vector2(x, y);
         particleManager.VCreateExplosion(location, explosionCenter);
+        if (this.Owner?.IsLocalPlayer ?? false)
+        {
+            ModEntry.StaticHelper.Multiplayer.SendMessage(
+                message: new ModEntry.WaterHitEffectMessage
+                {
+                    EffectType = "VCreateExplosion",
+                    X = explosionCenter.X,
+                    Y = explosionCenter.Y,
+                    LocationName = location.Name
+                },
+                messageType: "EyjaTrinket/PlayWaterHitEffect"
+            );
+        }
 
     }
     private void OnSpecialFireballCollision(GameLocation location, int x, int y, Character who)
     {
         Vector2 explosionCenter = new Vector2(x, y);
         particleManager.CreateSpecialExplosion(location, explosionCenter);
+        if (this.Owner?.IsLocalPlayer ?? false)
+        {
+            ModEntry.StaticHelper.Multiplayer.SendMessage(
+                message: new ModEntry.WaterHitEffectMessage
+                {
+                    EffectType = "CreateSpecialExplosion",
+                    X = explosionCenter.X,
+                    Y = explosionCenter.Y,
+                    LocationName = location.Name
+                },
+                messageType: "EyjaTrinket/PlayWaterHitEffect"
+            );
+        }
         Vector2 explosionTile = new Vector2(x / 64, y / 64);
         int damage = (Game1.random.Next(Damage - (int)(Damage * 0.2), Damage + (int)(Damage * 0.2) + 1) * 3) / 2;
         Farmer damageSource = Owner ?? Game1.player;
