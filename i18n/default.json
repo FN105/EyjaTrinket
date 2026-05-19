@@ -1,0 +1,13 @@
+﻿{
+  "Eyja.YanXi": "Pyrobreath",
+  "Eyja.YanXiDescription": "Adele's little staff",
+  "Eyja.ShouDongOpen": "Manual Mode",
+  "Eyja.ShouDongClose": "Automatic Mode",
+  "Eyja.VolcanoCD": "Volcano CD: ",
+  "Eyja.VolcanoDone": "Volcano is ready!",
+  "Eyja.VolcanicEchoesCD": "Volcanic Echoes CD: ",
+  "Eyja.VolcanicEchoesDone": "Volcanic Echoes is ready!",
+  "Eyja.ReplenishingMist": "Replenishing Mist",
+  "Eyja.VolcanoWatchers": "Volcano Watchers",
+  "Eyja.VERegenerates": "Regenerates {0} health points per second"
+}

@@ -1,0 +1,13 @@
+﻿{
+  "Eyja.YanXi": "炎息",
+  "Eyja.YanXiDescription": "阿黛尔的小法杖",
+  "Eyja.ShouDongOpen": "手动模式",
+  "Eyja.ShouDongClose": "自动模式",
+  "Eyja.VolcanoCD": "火山CD: ",
+  "Eyja.VolcanoDone": "火山已就绪!",
+  "Eyja.VolcanicEchoesCD": "火山回响CD：",
+  "Eyja.VolcanicEchoesDone": "火山回响已就绪!",
+  "Eyja.ReplenishingMist": "氤氲",
+  "Eyja.VolcanoWatchers": "火山预警花",
+  "Eyja.VERegenerates": "每秒回复{0}点生命值"
+}

@@ -1,0 +1,8 @@
+{
+  "Name": "EyjaTrinket",
+  "Author": "ForNext",
+  "Version": "1.1.0",
+  "Description": "Add a fireball trinket",
+  "EntryDll": "EyjaTrinket.dll",
+  "UniqueID": "ForNext.EyjaTrinket"
+}
